@@ -16,10 +16,11 @@ public class App {
 
         while(iterator.hasNext()){
             iterator.next();
-            if (iterator.hasPrevious()){
-                iterator.add((int) (Math.random()*10));
+            if (iterator.hasPrevious() && iterator.hasNext()){
+                iterator.add(3);
+                iterator.add(4);
+                iterator.add(3);
             }
-
         }
 
         System.out.println(list);
