@@ -11,4 +11,8 @@ public class FailingConstructor {
         this.y = y;
         z = x/y;
     }
+
+    public int getZ() {
+        return z;
+    }
 }
