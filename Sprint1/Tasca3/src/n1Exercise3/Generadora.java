@@ -5,7 +5,10 @@ import java.util.*;
 
 public class Generadora {
 
-    public List<String> personajes;
+    private List<String> personajes;
+
+    private Iterator<String> it;
+
 
     public Generadora() {
         personajes = new ArrayList<>();
@@ -15,7 +18,20 @@ public class Generadora {
         personajes.add("Ana");
         personajes.add("Lucas");
         personajes.add("Pepe");
+        it = personajes.iterator();
+    }
 
+    public List<String> getPersonajes() {
+        return personajes;
+    }
+
+    public String siguientePersonaje(){
+
+        if(!it.hasNext()){
+            it = personajes.iterator();
+        }
+
+        return it.next();
     }
 
 
