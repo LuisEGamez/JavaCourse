@@ -35,11 +35,7 @@ public class App {
 
         System.out.println("empleados = " + empleados);
 
-        empleados2.put(empleado1, "H");
-        empleados2.put(empleado2, "J");
-        empleados2.put(empleado3, "S");
-        empleados2.put(empleado4, "E");
-        empleados2.put(empleado5, "R");
+        empleados2.putAll(empleados);
 
         System.out.println("empleados2 = " + empleados2);
 
