@@ -1,6 +1,8 @@
 package n1Exercise7;
 
-public class Empleado  {
+
+
+public class Empleado implements Comparable<Empleado> {
 
     private String name;
 
@@ -10,8 +12,17 @@ public class Empleado  {
 
     @Override
     public String toString() {
-        return "Empleado{" +
-                "name='" + name + '\'' +
-                '}';
+        return  name ;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public int compareTo(Empleado o) {
+        return name.hashCode()-o.name.hashCode();
+    }
+
+
 }
