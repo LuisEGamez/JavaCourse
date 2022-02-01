@@ -28,6 +28,6 @@ public class App {
 
         System.out.println("personas = " + personas);
 
-        //List ordenaPersonas = new ArrayList<>(personas);
+
     }
 }
