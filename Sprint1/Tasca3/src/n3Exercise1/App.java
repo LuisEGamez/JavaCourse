@@ -33,5 +33,13 @@ public class App {
 
         System.out.println("contenedora = " + contenedora + " Tiempo: " + estimatedTime);
         System.out.println("list = " + list + " Tiempo: " + estimatedTime2);
+
+        if(estimatedTime > estimatedTime2){
+            System.out.println("ArrayList es " + estimatedTime/estimatedTime2 + " veces mas rápida que Contenedora");
+        }else if (estimatedTime < estimatedTime2){
+            System.out.println("Contenedora es " + estimatedTime2/estimatedTime + " veces mas rápida que ArrayList");
+        }else {
+            System.out.println("Las dos son igual de rápidas");
+        }
     }
 }
