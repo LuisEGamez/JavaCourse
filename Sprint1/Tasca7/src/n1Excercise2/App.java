@@ -12,6 +12,8 @@ public class App {
         System.out.println(hombre.showDatos());
         System.out.println(mujer.showDatos());
 
+        hombre.metodoObsoleto();
+        mujer.metodoObsoleto();
 
     }
 }
