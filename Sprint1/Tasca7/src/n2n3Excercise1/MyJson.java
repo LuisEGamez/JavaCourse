@@ -37,6 +37,8 @@ public class MyJson {
             bufferedWriter.newLine();
             bufferedWriter.flush();
 
+            System.out.println("Leemos la ruta en la annotation  = " + rutaArchivo);
+
 
         }
 
