@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.lang.annotation.Annotation;
 
 
-@FileDestinationAnnotation(fileDestination = "EjemploAnnotation.json")
+@FileDestinationAnnotation(fileDestination = "EjemploJsonAnnotation.json")
 public class MyJson {
     static Gson gson;
 
@@ -23,16 +23,16 @@ public class MyJson {
     }
 
     static void createJsonFile(String json) throws IOException, NoSuchMethodException {
-        BufferedWriter bufferedWriter = null;
-        Class aClass = MyJson.class;
-        Annotation annotation = aClass.getAnnotation(FileDestinationAnnotation.class);
+
+        Class aClass = MyJson.class; // Guardamos la clase
+        Annotation annotation = aClass.getAnnotation(FileDestinationAnnotation.class); // Tomamos las annotation que nos interesa
 
         if (annotation instanceof FileDestinationAnnotation){
 
             FileDestinationAnnotation myAnnotation = (FileDestinationAnnotation) annotation;
-            String rutaArchivo = myAnnotation.fileDestination();
+            String rutaArchivo = myAnnotation.fileDestination();// Guardamos el nombre y la ruta del archivo de la annotation
 
-            bufferedWriter = new BufferedWriter(new FileWriter(rutaArchivo));
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(rutaArchivo));
             bufferedWriter.write(json);
             bufferedWriter.newLine();
             bufferedWriter.flush();
