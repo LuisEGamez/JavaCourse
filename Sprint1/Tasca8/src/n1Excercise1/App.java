@@ -41,21 +41,22 @@ public class App {
 
     }
 
-
-
-
     static String listToString(List<Integer> numeros){
 
-            String numerosPar = numeros.stream()
-                    .filter(n -> n % 2 == 0)
-                    .map(n -> "e" + n)
-                    .collect(Collectors.joining(","));
-            String numerosImpar = numeros.stream()
-                    .filter(n -> n % 2 != 0)
-                    .map(n -> "o" + n)
+            String numerosEdit = numeros.stream()
+                                        .map(n -> {
+                                            String result;
+                                            if(n % 2 == 0){
+                                                result = "e" + n;
+                                            }else {
+                                                result = "o" + n;
+                                            }
+                                            return result;
+                                        })
                     .collect(Collectors.joining(","));
 
-        return  numerosImpar + "," + numerosPar ;
+
+        return  numerosEdit ;
     }
 
     static List<String> wordsWithO(List<String> list){
