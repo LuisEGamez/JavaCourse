@@ -6,9 +6,10 @@ import java.io.IOException;
 
 public class App {
     public static void main(String[] args) {
-
-        File ruta = new File(File.separator + "home" + File.separator + "luis"+ File.separator + "Escritorio" + File.separator + "Prueba");
-        File rutaTxt = new File(File.separator + "home" + File.separator + "luis"+ File.separator + "Escritorio" + File.separator + "Prueba"+File.separator  +"Resultado.txt");
+        String nameDir = args[0];
+        String nameFileTxt = args[1];
+        File ruta = new File(nameDir);
+        File rutaTxt = new File(nameFileTxt);
 
         try {
 

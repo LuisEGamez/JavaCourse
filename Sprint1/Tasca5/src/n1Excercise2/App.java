@@ -6,8 +6,9 @@ import java.io.File;
 
 public class App {
     public static void main(String[] args) {
+        String nameDir = args[0];
 
-        File ruta = new File(File.separator + "home" + File.separator + "luis"+ File.separator + "Escritorio" + File.separator + "Prueba");
+        File ruta = new File(nameDir);
 
         ListAndSortContentsDirectory.listAndSotAlphabetic(ruta);
 

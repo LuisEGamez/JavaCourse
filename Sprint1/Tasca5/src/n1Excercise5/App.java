@@ -4,7 +4,7 @@ import java.io.*;
 
 public class App {
     public static void main(String[] args) {
-
+            String nameFileSeri = args[0];
             Persona persona = new Persona("Juan","Garcia",55);
             ObjectOutputStream writeObj = null;
             ObjectInputStream readObj = null;
@@ -12,12 +12,10 @@ public class App {
             //Serializamos el objeto y lo guardamos en la ruta deseada con el formato deseado
 
         try {
-            writeObj = new ObjectOutputStream(new FileOutputStream(File.separator + "home" + File.separator + "luis"+ File.separator +
-                                                                        "Escritorio" + File.separator + "Prueba"+ File.separator + "Persona.ser"));
+            writeObj = new ObjectOutputStream(new FileOutputStream(nameFileSeri));
             writeObj.writeObject(persona);
 
-            readObj = new ObjectInputStream(new FileInputStream(File.separator + "home" + File.separator + "luis"+ File.separator +
-                    "Escritorio" + File.separator + "Prueba"+ File.separator + "Persona.ser"));
+            readObj = new ObjectInputStream(new FileInputStream(nameFileSeri));
             Persona personaRecuperada = (Persona) readObj.readObject(); // Realizamos un cast para poder guardarlo en una variable de su clase.
             System.out.println("Objeto recuperado  = " + personaRecuperada);
 
